@@ -5,15 +5,25 @@
   
 
   
-  <title>Archives: 2020 | Hexo</title>
+  <title>远程服务器挂载工具Sshfs | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="优秀的人，不是不合群，而是他们合群的人里面没有你  背景在开发过程中，我们很多时候需要远程访问服务器。对于认为Vim十分灵活的大神这个感觉感觉完全没有必要。对于我这种习惯了本地开发的同学，该软件能够帮助你将远程服务器文件夹映射到本地，然后直接在本地进行开发即可。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="远程服务器挂载工具Sshfs">
+<meta property="og:url" content="http://yoursite.com/2018/02/10/%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%82%E8%BD%BD%E5%B7%A5%E5%85%B7Sshfs/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="优秀的人，不是不合群，而是他们合群的人里面没有你  背景在开发过程中，我们很多时候需要远程访问服务器。对于认为Vim十分灵活的大神这个感觉感觉完全没有必要。对于我这种习惯了本地开发的同学，该软件能够帮助你将远程服务器文件夹映射到本地，然后直接在本地进行开发即可。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2018/10/25/5bd0e19f99cd6.png">
+<meta property="og:image" content="http://img.blog.csdn.net/20180210210650746?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzMyOTc3NzY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://i.loli.net/2018/10/25/5bd0e19f9f44b.png">
+<meta property="og:image" content="https://i.loli.net/2018/10/25/5bd0e19fd7d5d.png">
+<meta property="article:published_time" content="2018-02-11T05:13:43.000Z">
+<meta property="article:modified_time" content="2020-01-15T04:43:49.755Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Sshfs">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2018/10/25/5bd0e19f99cd6.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -62,59 +72,85 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/03/02/hello-world/" class="archive-article-date">
-  <time datetime="2020-03-03T00:11:47.198Z" itemprop="datePublished">Mar 2</time>
+        <section id="main"><article id="post-远程服务器挂载工具Sshfs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/10/%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%82%E8%BD%BD%E5%B7%A5%E5%85%B7Sshfs/" class="article-date">
+  <time datetime="2018-02-11T05:13:43.000Z" itemprop="datePublished">2018-02-10</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%85%8D%E7%BD%AE/">配置</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      远程服务器挂载工具Sshfs
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/01/14/posts/2020/01/optapplicationguideline/" class="archive-article-date">
-  <time datetime="2020-01-14T08:00:00.000Z" itemprop="datePublished">Jan 14</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/14/posts/2020/01/optapplicationguideline/">OPT Application Guideline</a>
-    </h1>
-  
+        <blockquote class="blockquote-center">优秀的人，不是不合群，而是他们合群的人里面没有你</blockquote>
 
-    </header>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在开发过程中，我们很多时候需要远程访问服务器。对于认为Vim十分灵活的大神这个感觉感觉完全没有必要。对于我这种习惯了本地开发的同学，该软件能够帮助你将远程服务器文件夹映射到本地，然后直接在本地进行开发即可。</p>
+<a id="more"></a> 
+
+<h1 id="Windows版本"><a href="#Windows版本" class="headerlink" title="Windows版本"></a>Windows版本</h1><p>##准备文件<br>我的系统是Win10，首先依次安装这两个软件<a href="https://github.com/dokan-dev/dokany/releases" target="_blank" rel="noopener">DokanSetup.exe</a>和<a href="https://github.com/Foreveryone-cz/win-sshfs/releases" target="_blank" rel="noopener">WinSSHFS-1.6.1.13-devel.msi</a>。<br>##使用<br>安装后的软件情况如下：<br><img src="https://i.loli.net/2018/10/25/5bd0e19f99cd6.png" alt="这里写图片描述"><br>安装后分别输入：<br>服务器部分：</p>
+<ul>
+<li>驱动的名字</li>
+<li>主机IP</li>
+<li>端口Port</li>
+<li>用户名Username</li>
+<li>密码Password</li>
+<li>根目录Directory</li>
+</ul>
+<p>本机部分：</p>
+<ul>
+<li>驱动号Drive Letter</li>
+</ul>
+<p>然后单击Save后挂载Mount。<br>此时，查看我的电脑，便会发现会出现一个新的盘符。<br><img src="http://img.blog.csdn.net/20180210210650746?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzMyOTc3NzY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>此时点击进入就是服务器的根目录。<br>如果像取消挂载，则点击Unmount。<br>#Mac版本<br>前面没有提到，首先要确认远程访问的服务器开启了sshfs服务。可通过查看 /etc/ssh/sshd_config 中是否有 Subsystem sftp/usr/lib/openssh/sftp-server确认。<br><img src="https://i.loli.net/2018/10/25/5bd0e19f9f44b.png" alt="这里写图片描述"></p>
+<h2 id="准备文件"><a href="#准备文件" class="headerlink" title="准备文件"></a>准备文件</h2><p>接着分别安装osxfuse和sshfs(确保已经安装了homebrew)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew cask install osxfuse</span><br><span class="line">brew install sshfs</span><br></pre></td></tr></table></figure>
+<p>##使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#挂载：注意本地文件夹名不要带空格</span><br><span class="line">sshfs -p port usr_name@ssh_server_ip:remote_dir local_dir</span><br><span class="line">#取消挂载：注意这时候应该关闭文件夹，或者可以加上-f强制取消</span><br><span class="line">umount local_dir</span><br><span class="line">umount -f local_dir</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2018/10/25/5bd0e19fd7d5d.png" alt="这里写图片描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/10/%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%82%E8%BD%BD%E5%B7%A5%E5%85%B7Sshfs/" data-id="ck7b6hrly0010fzdaff8q197m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sshfs/" rel="tag">Sshfs</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/11/Faster-R-CNN%E6%BA%90%E4%BB%A3%E7%A0%81-TF-networks-network-py-VGGnet-train-py-factory-py/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Faster R-CNN源代码(TF)--networks/network.py, VGGnet_train.py, factory.py
+        
+      </div>
+    </a>
   
   
-    </div></section>
-  
+</nav>
 
+  
+</article>
 
 </section>
         

@@ -103,7 +103,489 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/02/hello-world/" data-id="ck7b5rk5t000019dafw7qfj7g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/02/hello-world/" data-id="ck7b6hrlw000vfzda3w189uc4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/posts/2020/01/optapplicationguideline/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/14/posts/2020/01/optapplicationguideline/" class="article-date">
+  <time datetime="2020-01-14T08:00:00.000Z" itemprop="datePublished">2020-01-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/14/posts/2020/01/optapplicationguideline/">OPT Application Guideline</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OPT</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/14/posts/2020/01/optapplicationguideline/" data-id="ck7b6hrle0004fzdadojz0js5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fulltime/" rel="tag">Fulltime</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux命令总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/04/Linux%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2019-03-04T20:03:12.000Z" itemprop="datePublished">2019-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/04/Linux%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">Linux命令总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><p>解压 tar.gz</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf ×××.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf [package].tar.gz /[dirname]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/04/Linux%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" data-id="ck7b6hrlo000ffzdaf0sj0v4b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Pytorch" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/25/Pytorch/" class="article-date">
+  <time datetime="2019-02-26T00:30:46.000Z" itemprop="datePublished">2019-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/25/Pytorch/">Pytorch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="保存模型"><a href="#保存模型" class="headerlink" title="保存模型"></a>保存模型</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存和加载整个模型</span></span><br><span class="line">torch.save(model_object, <span class="string">'model.pkl'</span>)</span><br><span class="line">model = torch.load(<span class="string">'model.pkl'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 仅保存和加载模型参数(推荐使用)</span></span><br><span class="line">torch.save(model_object.state_dict(), <span class="string">'params.pkl'</span>)</span><br><span class="line">model_object.load_state_dict(torch.load(<span class="string">'params.pkl'</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"1.使用另一个Conv层的权值"</span>)</span><br><span class="line">q=torch.nn.Conv2d(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,padding=<span class="number">1</span>) <span class="comment"># 假设q代表一个训练好的卷积层</span></span><br><span class="line">print(q.weight) <span class="comment"># 可以看到q的权重和w是不同的</span></span><br><span class="line">w.weight=q.weight <span class="comment"># 把一个Conv层的权重赋值给另一个Conv层</span></span><br><span class="line">print(w.weight)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种方法</span></span><br><span class="line">print(<span class="string">"2.使用来自Tensor的权值"</span>)</span><br><span class="line">ones=torch.Tensor(np.ones([<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>])) <span class="comment"># 先创建一个自定义权值的Tensor，这里为了方便将所有权值设为1</span></span><br><span class="line">w.weight=torch.nn.Parameter(ones) <span class="comment"># 把Tensor的值作为权值赋值给Conv层，这里需要先转为torch.nn.Parameter类型，否则将报错</span></span><br><span class="line">print(w.weight)</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义Dataloader"><a href="#自定义Dataloader" class="headerlink" title="自定义Dataloader"></a>自定义Dataloader</h2><p>dataloader.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dataset</span><span class="params">(data.Dataset)</span>:</span></span><br><span class="line">  <span class="comment"># Dataloader for UTKFace</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, list_IDs, labels, transform=transforms.ToTensor<span class="params">()</span>)</span>:</span>             </span><br><span class="line">        self.data_path = <span class="string">"/home/ghao/datasets/Face/UTKFace"</span></span><br><span class="line">        self.labels = labels</span><br><span class="line">        self.list_IDs = list_IDs</span><br><span class="line">        self.transform = transform</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.list_IDs)</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, index)</span>:</span></span><br><span class="line">        <span class="comment"># Select sample</span></span><br><span class="line">        ID = self.list_IDs[index]</span><br><span class="line">        X = Image.open(os.path.join(self.data_path, ID))</span><br><span class="line">        X = self.transform(X)</span><br><span class="line">        y = self.labels[ID]</span><br><span class="line">        <span class="keyword">return</span> X, y</span><br></pre></td></tr></table></figure>
+
+<p>train.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">transform = transforms.Compose([</span><br><span class="line">			transforms.Resize(img_size),			</span><br><span class="line">			transforms.ToTensor(),</span><br><span class="line">			transforms.Normalize(mean=(<span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.5</span>), std=(<span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.5</span>))])</span><br><span class="line">	<span class="keyword">with</span> open(os.path.join(data_dir,<span class="string">"partition.pickle"</span>), <span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">		partition = pickle.load(f)</span><br><span class="line">	<span class="keyword">with</span> open(os.path.join(data_dir,<span class="string">"ageLabel.pickle"</span>), <span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">		agelabels = pickle.load(f)</span><br><span class="line"></span><br><span class="line">	training_set = Dataset(partition[<span class="string">'train'</span>], agelabels, transform = transform)</span><br><span class="line">	training_loader = torch.utils.data.DataLoader(training_set, batch_size=batch_size, shuffle=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/25/Pytorch/" data-id="ck7b6hrlr000lfzda4dyq1mv2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/posts/2019/02/amazonoa/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/23/posts/2019/02/amazonoa/" class="article-date">
+  <time datetime="2019-02-23T08:00:00.000Z" itemprop="datePublished">2019-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/23/posts/2019/02/amazonoa/">OK</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Amazon Software Engineer OA</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/23/posts/2019/02/amazonoa/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/23/posts/2019/02/amazonoa/" data-id="ck7b6hrl90001fzda1x5m700k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/posts/2019/02/amazonoa/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/22/posts/2019/02/amazonoa/" class="article-date">
+  <time datetime="2019-02-22T08:00:00.000Z" itemprop="datePublished">2019-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/22/posts/2019/02/amazonoa/">Amazon OA</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Amazon Software Engineer OA</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/22/posts/2019/02/amazonoa/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/22/posts/2019/02/amazonoa/" data-id="ck7b6hrl10000fzda1wulhxk9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Python用法记录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/19/Python%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time datetime="2019-02-19T22:38:29.000Z" itemprop="datePublished">2019-02-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/19/Python%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/">Python用法记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h1><h2 id="Numpy产生多维随机小数"><a href="#Numpy产生多维随机小数" class="headerlink" title="Numpy产生多维随机小数"></a>Numpy产生多维随机小数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.random.random((<span class="number">3</span>,<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="python产生一个随机数"><a href="#python产生一个随机数" class="headerlink" title="python产生一个随机数"></a>python产生一个随机数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">print(random.randint(<span class="number">0</span>,<span class="number">9</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/19/Python%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" data-id="ck7b6hrlq000jfzda3xh75nys" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Numpy/" rel="tag">Numpy</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-GAN论文阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/03/GAN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2019-01-04T00:03:16.000Z" itemprop="datePublished">2019-01-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/03/GAN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">GAN论文阅读笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="cGan"><a href="#cGan" class="headerlink" title="cGan"></a>cGan</h1><p>原文：《Conditional Generative Adversarial Nets》</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="Pytorch程序"><a href="#Pytorch程序" class="headerlink" title="Pytorch程序"></a>Pytorch程序</h2><ul>
+<li><p>遍历batch</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i, (imgs, labels) <span class="keyword">in</span> enumerate(dataloader)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>网络结构</p>
+</li>
+<li><pre><code class="python"><span class="class"><span class="keyword">class</span> <span class="title">Generator</span><span class="params">(nn.Module)</span>:</span>
+    <span class="comment"># initializers</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>
+        super(Generator, self).__init__()
+        self.fc1_1 = nn.Linear(<span class="number">100</span>, <span class="number">256</span>)
+        self.fc1_1_bn = nn.BatchNorm1d(<span class="number">256</span>)
+        self.fc1_2 = nn.Linear(<span class="number">10</span>, <span class="number">256</span>)
+        self.fc1_2_bn = nn.BatchNorm1d(<span class="number">256</span>)
+        self.fc2 = nn.Linear(<span class="number">512</span>, <span class="number">512</span>)
+        self.fc2_bn = nn.BatchNorm1d(<span class="number">512</span>)
+        self.fc3 = nn.Linear(<span class="number">512</span>, <span class="number">1024</span>)
+        self.fc3_bn = nn.BatchNorm1d(<span class="number">1024</span>)
+        self.fc4 = nn.Linear(<span class="number">1024</span>, H*W)
+    <span class="comment"># forward method</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, input, label)</span>:</span>
+        x = F.relu(self.fc1_1_bn(self.fc1_1(input)))
+        y = F.relu(self.fc1_2_bn(self.fc1_2(label)))
+        x = torch.cat([x, y], <span class="number">1</span>)
+        x = F.relu(self.fc2_bn(self.fc2(x)))
+        x = F.relu(self.fc3_bn(self.fc3(x)))
+        x = F.tanh(self.fc4(x))
+        <span class="keyword">return</span> x
+
+<span class="class"><span class="keyword">class</span> <span class="title">Discriminator</span><span class="params">(nn.Module)</span>:</span>
+    <span class="comment"># initializers</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>
+        super(Discriminator, self).__init__()
+        self.fc1_1 = nn.Linear(H*W, <span class="number">1024</span>)
+        self.fc1_2 = nn.Linear(<span class="number">10</span>, <span class="number">1024</span>)
+        self.fc2 = nn.Linear(<span class="number">2048</span>, <span class="number">512</span>)
+        self.fc2_bn = nn.BatchNorm1d(<span class="number">512</span>)
+        self.fc3 = nn.Linear(<span class="number">512</span>, <span class="number">256</span>)
+        self.fc3_bn = nn.BatchNorm1d(<span class="number">256</span>)
+        self.fc4 = nn.Linear(<span class="number">256</span>, <span class="number">1</span>)
+    <span class="comment"># forward method</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, input, label)</span>:</span>
+        x = F.leaky_relu(self.fc1_1(input.view(input.size(<span class="number">0</span>),<span class="number">-1</span>)), <span class="number">0.2</span>)
+        y = F.leaky_relu(self.fc1_2(label), <span class="number">0.2</span>)
+        x = torch.cat([x, y], <span class="number">1</span>)
+        x = F.leaky_relu(self.fc2_bn(self.fc2(x)), <span class="number">0.2</span>)
+        x = F.leaky_relu(self.fc3_bn(self.fc3(x)), <span class="number">0.2</span>)
+        x = F.sigmoid(self.fc4(x))
+        <span class="keyword">return</span> x</code></pre>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/03/GAN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ck7b6hrlg0006fzda18dkceeh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cGAN/" rel="tag">cGAN</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-San-Diego游玩攻略" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/23/San-Diego%E6%B8%B8%E7%8E%A9%E6%94%BB%E7%95%A5/" class="article-date">
+  <time datetime="2018-12-23T20:41:52.000Z" itemprop="datePublished">2018-12-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/23/San-Diego%E6%B8%B8%E7%8E%A9%E6%94%BB%E7%95%A5/">San Diego游玩攻略</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Sea-World-at-San-Diego"><a href="#Sea-World-at-San-Diego" class="headerlink" title="Sea World at San Diego"></a>Sea World at San Diego</h1><ul>
+<li>购票<ul>
+<li><a href="https://seaworld.com/san-diego/tickets/single-park-tickets/" target="_blank" rel="noopener">Sea World 购票链接</a></li>
+<li>计划买两个成人票</li>
+<li>71.99 one day； 91.99 one day + three meal</li>
+</ul>
+</li>
+<li>出行<ul>
+<li>uber 17刀</li>
+<li>公车去学校那站30路开始坐</li>
+</ul>
+</li>
+<li>时间<ul>
+<li>9am - 9pm</li>
+</ul>
+</li>
+</ul>
+<h1 id="中途岛航母（Midway-Museum）"><a href="#中途岛航母（Midway-Museum）" class="headerlink" title="中途岛航母（Midway Museum）"></a>中途岛航母（Midway Museum）</h1><p>不受天气限制</p>
+<ul>
+<li>购票<ul>
+<li><a href="https://www.midway.org/visit/buy-tickets/" target="_blank" rel="noopener">中途岛购票链接</a></li>
+<li>两个成人票 21刀</li>
+</ul>
+</li>
+<li>出行<ul>
+<li>uber 20刀</li>
+<li>公车暂时不确定</li>
+</ul>
+</li>
+</ul>
+<h1 id="Pacific-Beach"><a href="#Pacific-Beach" class="headerlink" title="Pacific Beach"></a>Pacific Beach</h1><p>最好天气好的时候去。</p>
+<p>从old town往北，SD的西海岸连着几个区都有海滩 - mission beach, <a href="http://www.mafengwo.cn/poi/6378886.html" target="_blank" rel="noopener">pacific beach</a>, <strong>La Jolla Cove Beach</strong>, Torrey Pines的black beach。重点标注La Jolla Cove beach，有小水鸟和小海豹，近距离的。</p>
+<h1 id="Old-Town"><a href="#Old-Town" class="headerlink" title="Old Town"></a>Old Town</h1><p>墨西哥城</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/23/San-Diego%E6%B8%B8%E7%8E%A9%E6%94%BB%E7%95%A5/" data-id="ck7b6hrls000pfzda3bw7ggry" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Midway/" rel="tag">Midway</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sea-World/" rel="tag">Sea World</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-感恩节前的周二" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/20/%E6%84%9F%E6%81%A9%E8%8A%82%E5%89%8D%E7%9A%84%E5%91%A8%E4%BA%8C/" class="article-date">
+  <time datetime="2018-11-20T17:52:18.000Z" itemprop="datePublished">2018-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/20/%E6%84%9F%E6%81%A9%E8%8A%82%E5%89%8D%E7%9A%84%E5%91%A8%E4%BA%8C/">感恩节前的星期二</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote class="blockquote-center">无论前方如何艰难，总会有两个人在你的身后给予源源不断且不求回报的支持</blockquote>
+
+<p>来美国之前想象美国有多么的好，夸张到将它过于神化、过于现代化。这里仍旧只是75亿地球人生活的居所之一，只是长着和我不一样的肤色，而他们也有着和我们一样的情感。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/11/20/%E6%84%9F%E6%81%A9%E8%8A%82%E5%89%8D%E7%9A%84%E5%91%A8%E4%BA%8C/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/20/%E6%84%9F%E6%81%A9%E8%8A%82%E5%89%8D%E7%9A%84%E5%91%A8%E4%BA%8C/" data-id="ck7b6hrlx000xfzdag640d7e0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -115,23 +597,49 @@
   
 
 
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
+
 </section>
         
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Vision/">Computer Vision</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%85%8D%E7%BD%AE/">配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Faster-R-CNN/" rel="tag">Faster R-CNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fulltime/" rel="tag">Fulltime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Midway/" rel="tag">Midway</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Numpy/" rel="tag">Numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sea-World/" rel="tag">Sea World</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sshfs/" rel="tag">Sshfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cGAN/" rel="tag">cGAN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag">位运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Faster-R-CNN/" style="font-size: 10px;">Faster R-CNN</a> <a href="/tags/Fulltime/" style="font-size: 10px;">Fulltime</a> <a href="/tags/Interview/" style="font-size: 20px;">Interview</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Midway/" style="font-size: 10px;">Midway</a> <a href="/tags/Numpy/" style="font-size: 10px;">Numpy</a> <a href="/tags/Sea-World/" style="font-size: 10px;">Sea World</a> <a href="/tags/Sshfs/" style="font-size: 10px;">Sshfs</a> <a href="/tags/cGAN/" style="font-size: 10px;">cGAN</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 10px;">位运算</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 10px;">动态规划</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
     </div>
   </div>
 
@@ -145,6 +653,22 @@
         
           <li>
             <a href="/2020/03/02/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/14/posts/2020/01/optapplicationguideline/">OPT Application Guideline</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/04/Linux%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">Linux命令总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/25/Pytorch/">Pytorch</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/23/posts/2019/02/amazonoa/">OK</a>
           </li>
         
       </ul>

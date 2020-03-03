@@ -5,14 +5,19 @@
   
 
   
-  <title>Archives: 2020 | Hexo</title>
+  <title>GAN论文阅读笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="cGan原文：《Conditional Generative Adversarial Nets》 原理Pytorch程序 遍历batch 1for i, (imgs, labels) in enumerate(dataloader)  网络结构  class Generator(nn.Module):     # initializers     def __init__(self):">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GAN论文阅读笔记">
+<meta property="og:url" content="http://yoursite.com/2019/01/03/GAN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="cGan原文：《Conditional Generative Adversarial Nets》 原理Pytorch程序 遍历batch 1for i, (imgs, labels) in enumerate(dataloader)  网络结构  class Generator(nn.Module):     # initializers     def __init__(self):">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-01-04T00:03:16.000Z">
+<meta property="article:modified_time" content="2020-01-15T04:43:49.754Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="cGAN">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -62,59 +67,118 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/03/02/hello-world/" class="archive-article-date">
-  <time datetime="2020-03-03T00:11:47.198Z" itemprop="datePublished">Mar 2</time>
+        <section id="main"><article id="post-GAN论文阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/03/GAN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2019-01-04T00:03:16.000Z" itemprop="datePublished">2019-01-03</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      GAN论文阅读笔记
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/01/14/posts/2020/01/optapplicationguideline/" class="archive-article-date">
-  <time datetime="2020-01-14T08:00:00.000Z" itemprop="datePublished">Jan 14</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/14/posts/2020/01/optapplicationguideline/">OPT Application Guideline</a>
-    </h1>
-  
+        <h1 id="cGan"><a href="#cGan" class="headerlink" title="cGan"></a>cGan</h1><p>原文：《Conditional Generative Adversarial Nets》</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="Pytorch程序"><a href="#Pytorch程序" class="headerlink" title="Pytorch程序"></a>Pytorch程序</h2><ul>
+<li><p>遍历batch</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i, (imgs, labels) <span class="keyword">in</span> enumerate(dataloader)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>网络结构</p>
+</li>
+<li><pre><code class="python"><span class="class"><span class="keyword">class</span> <span class="title">Generator</span><span class="params">(nn.Module)</span>:</span>
+    <span class="comment"># initializers</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>
+        super(Generator, self).__init__()
+        self.fc1_1 = nn.Linear(<span class="number">100</span>, <span class="number">256</span>)
+        self.fc1_1_bn = nn.BatchNorm1d(<span class="number">256</span>)
+        self.fc1_2 = nn.Linear(<span class="number">10</span>, <span class="number">256</span>)
+        self.fc1_2_bn = nn.BatchNorm1d(<span class="number">256</span>)
+        self.fc2 = nn.Linear(<span class="number">512</span>, <span class="number">512</span>)
+        self.fc2_bn = nn.BatchNorm1d(<span class="number">512</span>)
+        self.fc3 = nn.Linear(<span class="number">512</span>, <span class="number">1024</span>)
+        self.fc3_bn = nn.BatchNorm1d(<span class="number">1024</span>)
+        self.fc4 = nn.Linear(<span class="number">1024</span>, H*W)
+    <span class="comment"># forward method</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, input, label)</span>:</span>
+        x = F.relu(self.fc1_1_bn(self.fc1_1(input)))
+        y = F.relu(self.fc1_2_bn(self.fc1_2(label)))
+        x = torch.cat([x, y], <span class="number">1</span>)
+        x = F.relu(self.fc2_bn(self.fc2(x)))
+        x = F.relu(self.fc3_bn(self.fc3(x)))
+        x = F.tanh(self.fc4(x))
+        <span class="keyword">return</span> x
 
-    </header>
+<span class="class"><span class="keyword">class</span> <span class="title">Discriminator</span><span class="params">(nn.Module)</span>:</span>
+    <span class="comment"># initializers</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>
+        super(Discriminator, self).__init__()
+        self.fc1_1 = nn.Linear(H*W, <span class="number">1024</span>)
+        self.fc1_2 = nn.Linear(<span class="number">10</span>, <span class="number">1024</span>)
+        self.fc2 = nn.Linear(<span class="number">2048</span>, <span class="number">512</span>)
+        self.fc2_bn = nn.BatchNorm1d(<span class="number">512</span>)
+        self.fc3 = nn.Linear(<span class="number">512</span>, <span class="number">256</span>)
+        self.fc3_bn = nn.BatchNorm1d(<span class="number">256</span>)
+        self.fc4 = nn.Linear(<span class="number">256</span>, <span class="number">1</span>)
+    <span class="comment"># forward method</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, input, label)</span>:</span>
+        x = F.leaky_relu(self.fc1_1(input.view(input.size(<span class="number">0</span>),<span class="number">-1</span>)), <span class="number">0.2</span>)
+        y = F.leaky_relu(self.fc1_2(label), <span class="number">0.2</span>)
+        x = torch.cat([x, y], <span class="number">1</span>)
+        x = F.leaky_relu(self.fc2_bn(self.fc2(x)), <span class="number">0.2</span>)
+        x = F.leaky_relu(self.fc3_bn(self.fc3(x)), <span class="number">0.2</span>)
+        x = F.sigmoid(self.fc4(x))
+        <span class="keyword">return</span> x</code></pre>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/03/GAN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ck7b6hrlg0006fzda18dkceeh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cGAN/" rel="tag">cGAN</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/02/19/Python%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python用法记录
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/12/23/San-Diego%E6%B8%B8%E7%8E%A9%E6%94%BB%E7%95%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">San Diego游玩攻略</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
