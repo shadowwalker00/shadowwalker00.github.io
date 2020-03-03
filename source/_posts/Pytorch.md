@@ -5,7 +5,7 @@ tags:
 ---
 
 ## 保存模型
-
+<!--more-->
 ```python
 # 保存和加载整个模型
 torch.save(model_object, 'model.pkl')

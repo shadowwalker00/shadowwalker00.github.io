@@ -11,7 +11,7 @@ categories: Deep Learning
 # cGan
 
 原文：《Conditional Generative Adversarial Nets》
-
+<!--more-->
 ## 原理
 
 ## Pytorch程序

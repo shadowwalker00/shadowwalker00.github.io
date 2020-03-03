@@ -1,9 +1,7 @@
 ---
 title: 'PedestrianDetection'
 date: 2019-05-02
-permalink:/posts/2019/05/peddetection/
-tags:
-  - Deep Learning
+tags: [Deep Learning]
 ---
 
 这篇文章是完成CSE293课程作业的步骤，主要包含GCP服务器的配置，Faster RCNN的项目使用，CityPersons数据集的配置介绍，以防自己忘记。

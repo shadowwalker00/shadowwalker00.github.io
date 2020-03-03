@@ -5,7 +5,7 @@ author: 陈光皓
 tags: [Numpy]
 categories: Python
 ---
-
+<!--more-->
 # 随机数
 
 ## Numpy产生多维随机小数

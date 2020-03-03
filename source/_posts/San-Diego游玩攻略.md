@@ -8,7 +8,7 @@ tags: [Sea World, Midway]
 ---
 
 # Sea World at San Diego
-
+<!--more-->
 + 购票
   + [Sea World 购票链接](https://seaworld.com/san-diego/tickets/single-park-tickets/)
   + 计划买两个成人票

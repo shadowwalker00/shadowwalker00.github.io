@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Guanghao Chen HomePage
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Guanghao(Steven) Chen
 language: en
 timezone: ''
 
@@ -24,6 +24,7 @@ pretty_urls:
 # Directory
 source_dir: source
 public_dir: public
+about_dir: about
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
