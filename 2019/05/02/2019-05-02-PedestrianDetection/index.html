@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>PedestrianDetection | Guanghao Chen HomePage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这篇文章是完成CSE293课程作业的步骤，主要包含GCP服务器的配置，Faster RCNN的项目使用，CityPersons数据集的配置介绍，以防自己忘记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PedestrianDetection">
+<meta property="og:url" content="http://yoursite.com/2019/05/02/2019-05-02-PedestrianDetection/index.html">
+<meta property="og:site_name" content="Guanghao Chen HomePage">
+<meta property="og:description" content="这篇文章是完成CSE293课程作业的步骤，主要包含GCP服务器的配置，Faster RCNN的项目使用，CityPersons数据集的配置介绍，以防自己忘记。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2019/05/03/5ccb46a1dc239.png">
+<meta property="og:image" content="https://i.loli.net/2019/05/03/5ccb345349d5e.png">
+<meta property="og:image" content="https://i.loli.net/2019/05/03/5ccb98d6a0b38.png">
+<meta property="og:image" content="https://i.loli.net/2019/05/10/5cd450fef2eef.png">
+<meta property="article:published_time" content="2019-05-02T07:00:00.000Z">
+<meta property="article:modified_time" content="2020-03-03T05:13:07.306Z">
+<meta property="article:author" content="Guanghao(Steven) Chen">
+<meta property="article:tag" content="Deep Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/05/03/5ccb46a1dc239.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Guanghao Chen HomePage" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Guanghao Chen HomePage</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2019-05-02-PedestrianDetection" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/02/2019-05-02-PedestrianDetection/" class="article-date">
+  <time datetime="2019-05-02T07:00:00.000Z" itemprop="datePublished">2019-05-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PedestrianDetection
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这篇文章是完成CSE293课程作业的步骤，主要包含GCP服务器的配置，Faster RCNN的项目使用，CityPersons数据集的配置介绍，以防自己忘记。</p>
+<a id="more"></a>
+
+<h1 id="GCP-搭建参考"><a href="#GCP-搭建参考" class="headerlink" title="GCP 搭建参考"></a>GCP 搭建参考</h1><ul>
+<li><a href="https://github.com/sdrangan/introml/blob/master/GCP/terminal.md" target="_blank" rel="noopener">GCP配置参考1</a></li>
+<li><a href="https://github.com/sdrangan/introml/blob/master/GCP/getting_started.md" target="_blank" rel="noopener">GCP配置参考2</a></li>
+</ul>
+<h1 id="Faster-RCNN-Repo"><a href="#Faster-RCNN-Repo" class="headerlink" title="Faster RCNN Repo"></a>Faster RCNN Repo</h1><p><a href="https://github.com/endernewton/tf-faster-rcnn" target="_blank" rel="noopener">Faster RCNN TF版本 Github地址</a></p>
+<p>预训练模型在项目地址里可以下载</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li><p>安装requirements</p>
+</li>
+<li><pre><code class="shell">pip install cython
+pip install easydict
+pip install opencv-python
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 进入lib文件夹，make配置一下</span><br><span class="line"></span><br><span class="line">  - 可能需要求改一下setup.py中的文件GPU的架构</span><br><span class="line"></span><br><span class="line">- 我使用的是GCP的Tesla K80，因此修改成sm_37</span><br><span class="line"></span><br><span class="line">- make 一下</span><br><span class="line"></span><br><span class="line">- 创建一个model&#x2F;，把下载的预训练的Faster RCNN model 放进这个文件夹中并解压</span><br><span class="line"></span><br><span class="line">## 测试Demo</span><br><span class="line"></span><br><span class="line">- 把待测试图片放入data&#x2F;demo下面</span><br><span class="line"></span><br><span class="line">- 修改tools&#x2F;demo.py的内容，主要包括</span><br><span class="line"></span><br><span class="line">  - 预训练参数的路径</span><br><span class="line"></span><br><span class="line">  - 待测试文件名</span><br><span class="line"></span><br><span class="line">  - plt show修改成savefig，为了能够在服务器使用plt，需要添加</span><br><span class="line"></span><br><span class="line">    &#96;&#96;&#96;python</span><br><span class="line">    import matplotlib</span><br><span class="line">    matplotlib.use(&#39;Agg&#39;)</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/03/5ccb46a1dc239.png" alt="test.png"></p>
+<h1 id="Dataset组织"><a href="#Dataset组织" class="headerlink" title="Dataset组织"></a>Dataset组织</h1><p>CityPersons</p>
+<p><a href="https://link.jianshu.com/?t=https%3A%2F%2Fwww.cityscapes-dataset.com%2Ffile-handling%2F%3FpackageID%3D3" target="_blank" rel="noopener">图片下载地址</a></p>
+<p><a href="https://link.jianshu.com/?t=https%3A%2F%2Fwww.cityscapes-dataset.com%2Ffile-handling%2F%3FpackageID%3D28" target="_blank" rel="noopener">标注下载地址</a></p>
+<p><a href="https://bitbucket.org/shanshanzhang/citypersons/src/default/" target="_blank" rel="noopener">Citypersons Benchmark 地址</a></p>
+<h2 id="标注文件格式转换-Json-rightarrow-XML"><a href="#标注文件格式转换-Json-rightarrow-XML" class="headerlink" title="标注文件格式转换 Json$\rightarrow$XML"></a>标注文件格式转换 Json$\rightarrow$XML</h2><p><a href="https://github.com/dongdonghy/citypersons2voc" target="_blank" rel="noopener">格式转换参考Repo</a></p>
+<ul>
+<li>把所有的.json文件放入同样的annotation文件夹当中，放入annotationVOC文件夹</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python ./scripts/citypersons2voc.py --input_dir "test" --output_dir "testXML"</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">numbers of images:  3475</span><br><span class="line">number of ped:  19683</span><br><span class="line">number of ignore:  13882</span><br><span class="line">number of images with 0 labels :  210</span><br><span class="line">max number of labels in single images:  99</span><br><span class="line">number of heavy:  6827</span><br><span class="line">number of small:  4464</span><br><span class="line">number of heavy and small:  1692</span><br><span class="line">min width of ped:   2.0</span><br><span class="line">min height of ped:  6.0</span><br><span class="line">max width of ped:   396.0</span><br><span class="line">max height of ped:  965.0</span><br><span class="line">mean ratio pf ped:  0.409959461309</span><br><span class="line">max ratio of ped:  0.5</span><br><span class="line">min ratio of ped:  0.285714285714</span><br></pre></td></tr></table></figure>
+
+<h2 id="图片归并到同一个文件夹"><a href="#图片归并到同一个文件夹" class="headerlink" title="图片归并到同一个文件夹"></a>图片归并到同一个文件夹</h2><p>解压tgz文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf backups.tgz</span><br></pre></td></tr></table></figure>
+
+<p>查看当前目录条目数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l | grep "^-" | wc -l</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不管是train图片还是test图片都放到同一个文件夹JPEGImages中</li>
+<li>同时统计train，val，test集的图片名字到三个txt的文件当中，不需要保存后缀<ul>
+<li>Citypersons train: 2975 张</li>
+<li>Citypersons val: 500 张</li>
+<li>Citypersons test: 1525 张</li>
+</ul>
+</li>
+<li>将3个txt文件放入Imageset/Main文件夹中</li>
+</ul>
+<h2 id="最终数据集文件结构"><a href="#最终数据集文件结构" class="headerlink" title="最终数据集文件结构"></a>最终数据集文件结构</h2><p><img src="https://i.loli.net/2019/05/03/5ccb345349d5e.png" alt="WX20190502-111743@2x.png"></p>
+<h2 id="编写数据读取接口"><a href="#编写数据读取接口" class="headerlink" title="编写数据读取接口"></a>编写数据读取接口</h2><ul>
+<li><p>编写lib/cityperson.py</p>
+<ul>
+<li>仿照pascal_voc进行修改</li>
+<li>修改类名</li>
+<li>name</li>
+<li>self._classes</li>
+<li>_get_default_path()</li>
+</ul>
+</li>
+<li><p>修改lib/factory.py</p>
+<ul>
+<li><p>增加cityperson的key-value</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set up Citypersons_&lt;split&gt;</span></span><br><span class="line"><span class="keyword">for</span> split <span class="keyword">in</span> [<span class="string">'train'</span>, <span class="string">'val'</span>, <span class="string">'test'</span>]:</span><br><span class="line">  name = <span class="string">'cityperson_&#123;&#125;'</span>.format(split)</span><br><span class="line">  __sets[name] = (<span class="keyword">lambda</span> split = split: cityperson(split))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>修改experiments/scripts/train_faster_rcnn.sh(test_faster_rcnn.sh)</p>
+<ul>
+<li><p>增加citypersons的定义</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cityperson)</span><br><span class="line">    TRAIN_IMDB="cityperson_train"</span><br><span class="line">    TEST_IMDB="cityperson_test"</span><br><span class="line">    STEPSIZE=['50000']</span><br><span class="line">    ITERS=70000</span><br><span class="line">    ANCHORS="[8,16,32]"</span><br><span class="line">    RATIOS="[0.5,1,2]"</span><br><span class="line">    ;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除后面命令中的time</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h1><h2 id="准备VGG16的参数"><a href="#准备VGG16的参数" class="headerlink" title="准备VGG16的参数"></a>准备VGG16的参数</h2><p>下载VGG16的已经训练好的参数</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p data/imagenet_weights</span><br><span class="line"><span class="built_in">cd</span> data/imagenet_weights</span><br><span class="line">wget -v http://download.tensorflow.org/models/vgg_16_2016_08_28.tar.gz</span><br><span class="line">tar -xzvf vgg_16_2016_08_28.tar.gz</span><br><span class="line">mv vgg_16.ckpt vgg16.ckpt</span><br><span class="line"><span class="built_in">cd</span> ../..</span><br></pre></td></tr></table></figure>
+
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./experiments/scripts/train_faster_rcnn.sh 0 cityperson vgg16</span><br></pre></td></tr></table></figure>
+
+<h2 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h2><ol>
+<li><p>执行上面训练命令时候出现没有time</p>
+<p>solution：删除time</p>
+</li>
+<li><p>执行训练命令出现”没有difficult”属性</p>
+<p>solution：在citypersons2voc.py文件中增加一个difficult节点</p>
+</li>
+<li><p>执行训练命令中出现</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">File "/home/guanghao0419/tf-faster-rcnn/tools/../lib/datasets/imdb.py", line 118, in append_flipped_images</span><br><span class="line">    assert (boxes[:, 2] &gt;= boxes[:, 0]).all()</span><br><span class="line">AssertionError</span><br></pre></td></tr></table></figure>
+
+<p>从根本上解决问题，检查一下是否有下面两种情况：</p>
+<ul>
+<li>xmin/ymin是0</li>
+<li>xmax/ymax已经超过了图像的宽/高</li>
+</ul>
+<p>Solution:</p>
+<ul>
+<li>xmin/ymin xmax/ymax都+1</li>
+<li>检查xmax和ymax超过宽/高的，赋值成宽-1/高-1</li>
+</ul>
+<p>例如下图最右侧的半身人</p>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2019/05/03/5ccb98d6a0b38.png" alt="ok.png"></p>
+<ol start="4">
+<li><p>rpn box loss is nan</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/home/guanghao0419/tf-faster-rcnn/tools/../lib/model/bbox_transform.py:27: RuntimeWarning: invalid value encountered <span class="keyword">in</span> <span class="built_in">log</span></span><br><span class="line">  targets_dw = np.log(gt_widths / ex_widths)</span><br><span class="line">iter: 80 / 70000, total loss: nan</span><br><span class="line"> &gt;&gt;&gt; rpn_loss_cls: 0.669006</span><br><span class="line"> &gt;&gt;&gt; rpn_loss_box: nan</span><br><span class="line"> &gt;&gt;&gt; loss_cls: 0.000197</span><br><span class="line"> &gt;&gt;&gt; loss_box: 0.000000</span><br><span class="line"> &gt;&gt;&gt; lr: 0.001000</span><br></pre></td></tr></table></figure>
+
+<p>还是数据标注的问题，检查发现除了某些标注框小于0，有些大于宽/高</p>
+<p>solution: 已经在citypersons2voc.py重新对这些违法的标注框重新赋值了</p>
+</li>
+</ol>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>训练好的模型保存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;output&#x2F;vgg16&#x2F;cityperson_train&#x2F;default&#x2F;vgg16_faster_rcnn_iter_70000.ckpt</span><br></pre></td></tr></table></figure>
+
+<h2 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./experiments/scripts/test_faster_rcnn.sh 0 cityperson vgg16</span><br></pre></td></tr></table></figure>
+
+<h2 id="报错解决-1"><a href="#报错解决-1" class="headerlink" title="报错解决"></a>报错解决</h2><ol>
+<li>找不到文件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IOError: [Errno 2] No such file or directory: '/path/to/my/tf-faster-rcnn-master/data/VOCdevkit2007/results/VOC2007/Main/comp4_04d40519-2eb7-49c9-aff7-db661169d037_xxxx.txt'</span><br></pre></td></tr></table></figure>
+
+<p>Solution：按照上面的路径创建文件夹results/VOC2010/Main</p>
+<ol start="2">
+<li>不能对浮点字符串进行int的强制转换</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">File "/home/guanghao0419/tf-faster-rcnn/tools/../lib/datasets/voc_eval.py", line 23, in parse_rec</span><br><span class="line">    obj_struct['truncated'] = int(obj.find('truncated').text)</span><br><span class="line">ValueError: invalid literal for int() with base 10: '0.647058823529'</span><br></pre></td></tr></table></figure>
+
+<p>Solution：先修改成float 再转换成int</p>
+<p><img src="https://i.loli.net/2019/05/10/5cd450fef2eef.png" alt="WX20190509-091012@2x.png"></p>
+<h1 id="解决Occlusion问题-—-Repulsion-Loss"><a href="#解决Occlusion问题-—-Repulsion-Loss" class="headerlink" title="解决Occlusion问题 — Repulsion Loss"></a>解决Occlusion问题 — Repulsion Loss</h1><p><a href="https://github.com/endernewton/tf-faster-rcnn/blob/master/lib/nets/network.py" target="_blank" rel="noopener">Tensorflow版本的Faster RCNN Loss的计算位置</a></p>
+<p><a href="https://github.com/dongdonghy/repulsion-loss-faster-rcnn-pytorch/blob/master/lib/model/faster_rcnn/repulsion_loss.py" target="_blank" rel="noopener">repulsion loss的实现</a></p>
+<p><a href="https://github.com/JegernOUTT/repulsion_loss/blob/master/repulsion_loss.py" target="_blank" rel="noopener">https://github.com/JegernOUTT/repulsion_loss/blob/master/repulsion_loss.py</a></p>
+<p><a href="https://github.com/dongdonghy/repulsion-loss-faster-rcnn-pytorch" target="_blank" rel="noopener">https://github.com/dongdonghy/repulsion-loss-faster-rcnn-pytorch</a></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://blog.csdn.net/yaoqi_isee/article/details/79254574" target="_blank" rel="noopener">CSDN 如何组织数据集</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/02/2019-05-02-PedestrianDetection/" data-id="ck7bfvda20004xxdae2yh0ggh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/" rel="tag">Deep Learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/01/14/posts/2020/01/optapplicationguideline/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          OPT Application Guideline
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/04/Linux%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux命令总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Vision/">Computer Vision</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%85%8D%E7%BD%AE/">配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/" rel="tag">Deep Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Faster-R-CNN/" rel="tag">Faster R-CNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fulltime/" rel="tag">Fulltime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interview/" rel="tag">Interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Midway/" rel="tag">Midway</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Numpy/" rel="tag">Numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sea-World/" rel="tag">Sea World</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sshfs/" rel="tag">Sshfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cGAN/" rel="tag">cGAN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag">位运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Deep-Learning/" style="font-size: 20px;">Deep Learning</a> <a href="/tags/Faster-R-CNN/" style="font-size: 10px;">Faster R-CNN</a> <a href="/tags/Fulltime/" style="font-size: 10px;">Fulltime</a> <a href="/tags/Interview/" style="font-size: 20px;">Interview</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Midway/" style="font-size: 10px;">Midway</a> <a href="/tags/Numpy/" style="font-size: 10px;">Numpy</a> <a href="/tags/Sea-World/" style="font-size: 10px;">Sea World</a> <a href="/tags/Sshfs/" style="font-size: 10px;">Sshfs</a> <a href="/tags/cGAN/" style="font-size: 10px;">cGAN</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 10px;">位运算</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 10px;">动态规划</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/14/posts/2020/01/optapplicationguideline/">OPT Application Guideline</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/02/2019-05-02-PedestrianDetection/">PedestrianDetection</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/04/Linux%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">Linux命令总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/25/Pytorch/">Pytorch</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/22/posts/2019/02/amazonoa/">Amazon OA</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Guanghao(Steven) Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
