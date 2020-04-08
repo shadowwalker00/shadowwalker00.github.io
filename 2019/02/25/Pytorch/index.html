@@ -7,15 +7,15 @@
   
   <title>Pytorch | Guanghao Chen HomePage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="保存模型">
+  <meta name="description" content="保存模型1234567# 保存和加载整个模型torch.save(model_object, &#39;model.pkl&#39;)model &#x3D; torch.load(&#39;model.pkl&#39;)# 仅保存和加载模型参数(推荐使用)torch.save(model_object.state_dict(), &#39;params.pkl&#39;)model_object.load_state_dict(torch.load(&#39;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pytorch">
 <meta property="og:url" content="http://yoursite.com/2019/02/25/Pytorch/index.html">
 <meta property="og:site_name" content="Guanghao Chen HomePage">
-<meta property="og:description" content="保存模型">
+<meta property="og:description" content="保存模型1234567# 保存和加载整个模型torch.save(model_object, &#39;model.pkl&#39;)model &#x3D; torch.load(&#39;model.pkl&#39;)# 仅保存和加载模型参数(推荐使用)torch.save(model_object.state_dict(), &#39;params.pkl&#39;)model_object.load_state_dict(torch.load(&#39;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-02-26T00:30:46.000Z">
-<meta property="article:modified_time" content="2020-03-03T05:24:49.925Z">
+<meta property="article:modified_time" content="2020-04-08T23:00:50.625Z">
 <meta property="article:author" content="Guanghao(Steven) Chen">
 <meta name="twitter:card" content="summary">
   
@@ -90,8 +90,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="保存模型"><a href="#保存模型" class="headerlink" title="保存模型"></a>保存模型</h2><a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存和加载整个模型</span></span><br><span class="line">torch.save(model_object, <span class="string">'model.pkl'</span>)</span><br><span class="line">model = torch.load(<span class="string">'model.pkl'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 仅保存和加载模型参数(推荐使用)</span></span><br><span class="line">torch.save(model_object.state_dict(), <span class="string">'params.pkl'</span>)</span><br><span class="line">model_object.load_state_dict(torch.load(<span class="string">'params.pkl'</span>))</span><br></pre></td></tr></table></figure>
+        <h2 id="保存模型"><a href="#保存模型" class="headerlink" title="保存模型"></a>保存模型</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存和加载整个模型</span></span><br><span class="line">torch.save(model_object, <span class="string">'model.pkl'</span>)</span><br><span class="line">model = torch.load(<span class="string">'model.pkl'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 仅保存和加载模型参数(推荐使用)</span></span><br><span class="line">torch.save(model_object.state_dict(), <span class="string">'params.pkl'</span>)</span><br><span class="line">model_object.load_state_dict(torch.load(<span class="string">'params.pkl'</span>))</span><br></pre></td></tr></table></figure>
 
 <h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"1.使用另一个Conv层的权值"</span>)</span><br><span class="line">q=torch.nn.Conv2d(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,padding=<span class="number">1</span>) <span class="comment"># 假设q代表一个训练好的卷积层</span></span><br><span class="line">print(q.weight) <span class="comment"># 可以看到q的权重和w是不同的</span></span><br><span class="line">w.weight=q.weight <span class="comment"># 把一个Conv层的权重赋值给另一个Conv层</span></span><br><span class="line">print(w.weight)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种方法</span></span><br><span class="line">print(<span class="string">"2.使用来自Tensor的权值"</span>)</span><br><span class="line">ones=torch.Tensor(np.ones([<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>])) <span class="comment"># 先创建一个自定义权值的Tensor，这里为了方便将所有权值设为1</span></span><br><span class="line">w.weight=torch.nn.Parameter(ones) <span class="comment"># 把Tensor的值作为权值赋值给Conv层，这里需要先转为torch.nn.Parameter类型，否则将报错</span></span><br><span class="line">print(w.weight)</span><br></pre></td></tr></table></figure>
 
@@ -107,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/25/Pytorch/" data-id="ck8rxnogh000e0bdablkbg936" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/25/Pytorch/" data-id="ck8rxs05y000f4edaetp5bkyu" class="article-share-link">Share</a>
       
       
     </footer>
