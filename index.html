@@ -124,7 +124,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -200,7 +200,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-04-10 17:15:46" itemprop="dateModified" datetime="2020-04-10T17:15:46-07:00">2020-04-10</time>
+                <time title="Modified: 2020-04-10 17:40:50" itemprop="dateModified" datetime="2020-04-10T17:40:50-07:00">2020-04-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -224,7 +224,7 @@
 
       
           <h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>This post contains some frequently used knowledge in Java.</p>
-<h1 id="Cheat-Sheet"><a href="#Cheat-Sheet" class="headerlink" title="Cheat Sheet"></a>Cheat Sheet</h1><h2 id="1-Comparator"><a href="#1-Comparator" class="headerlink" title="1. Comparator"></a>1. Comparator</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class NameSorter implements Comparator&lt;Employee&gt;</span><br><span class="line">&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Employee e1, Employee e2) &#123;</span><br><span class="line">        return e1.getName().compareToIgnoreCase( e2.getName() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Cheat-Sheet"><a href="#Cheat-Sheet" class="headerlink" title="Cheat Sheet"></a>Cheat Sheet</h1><h2 id="Comparator"><a href="#Comparator" class="headerlink" title="Comparator"></a>Comparator</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class NameSorter implements Comparator&lt;Employee&gt;</span><br><span class="line">&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Employee e1, Employee e2) &#123;</span><br><span class="line">        return e1.getName().compareToIgnoreCase( e2.getName() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The purpose of annotation @Override, referenced from Dave L.’s answer.<br><a href="https://stackoverflow.com/questions/94361/when-do-you-use-javas-override-annotation-and-why" target="_blank" rel="noopener">https://stackoverflow.com/questions/94361/when-do-you-use-javas-override-annotation-and-why</a> </p>
           <!--noindex-->
             <div class="post-button">
@@ -504,7 +504,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/02/25/Pytorch/" class="post-title-link" itemprop="url">Pytorch</a>
+            <a href="/2019/02/25/Pytorch/" class="post-title-link" itemprop="url">Pytorch 用法</a>
         </h2>
 
         <div class="post-meta">
@@ -521,7 +521,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-04-08 16:14:32" itemprop="dateModified" datetime="2020-04-08T16:14:32-07:00">2020-04-08</time>
+                <time title="Modified: 2020-04-10 17:47:08" itemprop="dateModified" datetime="2020-04-10T17:47:08-07:00">2020-04-10</time>
               </span>
 
           
@@ -535,7 +535,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="保存模型"><a href="#保存模型" class="headerlink" title="保存模型"></a>保存模型</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存和加载整个模型</span></span><br><span class="line">torch.save(model_object, <span class="string">'model.pkl'</span>)</span><br><span class="line">model = torch.load(<span class="string">'model.pkl'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 仅保存和加载模型参数(推荐使用)</span></span><br><span class="line">torch.save(model_object.state_dict(), <span class="string">'params.pkl'</span>)</span><br><span class="line">model_object.load_state_dict(torch.load(<span class="string">'params.pkl'</span>))</span><br></pre></td></tr></table></figure>
+          <h1 id="保存模型"><a href="#保存模型" class="headerlink" title="保存模型"></a>保存模型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存和加载整个模型</span></span><br><span class="line">torch.save(model_object, <span class="string">'model.pkl'</span>)</span><br><span class="line">model = torch.load(<span class="string">'model.pkl'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 仅保存和加载模型参数(推荐使用)</span></span><br><span class="line">torch.save(model_object.state_dict(), <span class="string">'params.pkl'</span>)</span><br><span class="line">model_object.load_state_dict(torch.load(<span class="string">'params.pkl'</span>))</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/02/25/Pytorch/#more" rel="contents">
@@ -544,86 +544,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Python%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Guanghao(Steven) Chen">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Guanghao Chen HomePage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/02/19/Python%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">Python用法记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-02-19 14:38:29" itemprop="dateCreated datePublished" datetime="2019-02-19T14:38:29-08:00">2019-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-02 21:22:04" itemprop="dateModified" datetime="2020-03-02T21:22:04-08:00">2020-03-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <a id="more"></a>
-<h1 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h1><h2 id="Numpy产生多维随机小数"><a href="#Numpy产生多维随机小数" class="headerlink" title="Numpy产生多维随机小数"></a>Numpy产生多维随机小数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.random.random((<span class="number">3</span>,<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
-
-<h2 id="python产生一个随机数"><a href="#python产生一个随机数" class="headerlink" title="python产生一个随机数"></a>python产生一个随机数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">print(random.randint(<span class="number">0</span>,<span class="number">9</span>))</span><br></pre></td></tr></table></figure>
-
-
-
-
       
     </div>
 
@@ -759,7 +679,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-02 22:06:55" itemprop="dateModified" datetime="2020-03-02T22:06:55-08:00">2020-03-02</time>
+                <time title="Modified: 2020-04-10 17:47:59" itemprop="dateModified" datetime="2020-04-10T17:47:59-07:00">2020-04-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -782,7 +702,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Sea-World-at-San-Diego"><a href="#Sea-World-at-San-Diego" class="headerlink" title="Sea World at San Diego"></a>Sea World at San Diego</h1>
+          <h1 id="Sea-World-at-San-Diego"><a href="#Sea-World-at-San-Diego" class="headerlink" title="Sea World at San Diego"></a>Sea World at San Diego</h1><ul>
+<li>购票<ul>
+<li><a href="https://seaworld.com/san-diego/tickets/single-park-tickets/" target="_blank" rel="noopener">Sea World 购票链接</a></li>
+<li>计划买两个成人票</li>
+<li>71.99 one day； 91.99 one day + three meal</li>
+</ul>
+</li>
+<li>出行<ul>
+<li>uber 17刀</li>
+<li>公车去学校那站30路开始坐</li>
+</ul>
+</li>
+<li>时间<ul>
+<li>9am - 9pm
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/12/23/San-Diego%E6%B8%B8%E7%8E%A9%E6%94%BB%E7%95%A5/#more" rel="contents">
@@ -840,7 +773,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-02 22:07:55" itemprop="dateModified" datetime="2020-03-02T22:07:55-08:00">2020-03-02</time>
+                <time title="Modified: 2020-04-10 17:48:56" itemprop="dateModified" datetime="2020-04-10T17:48:56-07:00">2020-04-10</time>
               </span>
 
           
@@ -854,7 +787,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Pretrained-Network-vs-Whole-Network"><a href="#Pretrained-Network-vs-Whole-Network" class="headerlink" title="Pretrained Network vs Whole Network"></a>Pretrained Network vs Whole Network</h1>
+          <h1 id="Pretrained-Network-vs-Whole-Network"><a href="#Pretrained-Network-vs-Whole-Network" class="headerlink" title="Pretrained Network vs Whole Network"></a>Pretrained Network vs Whole Network</h1><p>这部分对比几个方面的实验:</p>
+<ul>
+<li>使用Pretrained Weight并训练整个网络</li>
+<li>使用Pretraiend网络并训练新加层的参数 包括conv6  bias6 GAP bias</li>
+<li>所有参数均初始化</li>
+</ul>
+<p>结果：在使用Pretrained Weight的基础上，进行whole network的retrain时performance最好。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/12/23/2018-12-23-CAMFace%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95/#more" rel="contents">
@@ -912,7 +851,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-02 22:15:40" itemprop="dateModified" datetime="2020-03-02T22:15:40-08:00">2020-03-02</time>
+                <time title="Modified: 2020-04-10 17:49:10" itemprop="dateModified" datetime="2020-04-10T17:49:10-07:00">2020-04-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -936,6 +875,7 @@
 
       
           <p>来美国之前想象美国有多么的好，夸张到将它过于神化、过于现代化。这里仍旧只是75亿地球人生活的居所之一，只是长着和我不一样的肤色，而他们也有着和我们一样的情感。</p>
+<p>已经是不知道来到美国的第几个星期二了，十分紧张，因为晚上要见一个实验室的学姐，这关乎到我最终能不能进入实验室。所以，对待学姐分配的论文，我反复地看了几遍，希望自己能够完全地理解其中的内容。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/11/20/%E6%84%9F%E6%81%A9%E8%8A%82%E5%89%8D%E7%9A%84%E5%91%A8%E4%BA%8C/#more" rel="contents">
@@ -944,6 +884,83 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/12/Stereo-Matching/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Guanghao(Steven) Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Guanghao Chen HomePage">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/11/12/Stereo-Matching/" class="post-title-link" itemprop="url">Stereo Matching</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-12 14:14:42" itemprop="dateCreated datePublished" datetime="2018-11-12T14:14:42-08:00">2018-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-02 21:22:34" itemprop="dateModified" datetime="2020-03-02T21:22:34-08:00">2020-03-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Vision/" itemprop="url" rel="index"><span itemprop="name">Computer Vision</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+<h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h1><p>“Stereo matching is the process of taking two or more images and estimating a 3D model of<br>the scene by finding matching pixels in the images and converting their 2D positions into<br>3D depths.” 摘抄自《computer vision》</p>
+<h1 id="2-名词解释"><a href="#2-名词解释" class="headerlink" title="2. 名词解释"></a>2. 名词解释</h1><p>Epipolar geometry 对极几何</p>
+<p>Rectification 矫正</p>
+
       
     </div>
 
@@ -1027,16 +1044,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

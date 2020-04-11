@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="BackgroundThis post contains some frequently used knowledge in Java. Cheat Sheet1. Comparator1234567public class NameSorter implements Comparator&lt;Employee&gt;&amp;#123;    @Override    public int compa">
+  <meta name="description" content="BackgroundThis post contains some frequently used knowledge in Java. Cheat SheetComparator1234567public class NameSorter implements Comparator&lt;Employee&gt;&amp;#123;    @Override    public int compare(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaCheatSheet">
 <meta property="og:url" content="http://yoursite.com/2020/04/09/JavaCheatSheet/index.html">
 <meta property="og:site_name" content="Guanghao Chen HomePage">
-<meta property="og:description" content="BackgroundThis post contains some frequently used knowledge in Java. Cheat Sheet1. Comparator1234567public class NameSorter implements Comparator&lt;Employee&gt;&amp;#123;    @Override    public int compa">
+<meta property="og:description" content="BackgroundThis post contains some frequently used knowledge in Java. Cheat SheetComparator1234567public class NameSorter implements Comparator&lt;Employee&gt;&amp;#123;    @Override    public int compare(">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-09T18:50:24.000Z">
-<meta property="article:modified_time" content="2020-04-11T00:15:46.880Z">
+<meta property="article:modified_time" content="2020-04-11T00:40:50.964Z">
 <meta property="article:author" content="Guanghao(Steven) Chen">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-04-10 17:15:46" itemprop="dateModified" datetime="2020-04-10T17:15:46-07:00">2020-04-10</time>
+                <time title="Modified: 2020-04-10 17:40:50" itemprop="dateModified" datetime="2020-04-10T17:40:50-07:00">2020-04-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,7 +229,7 @@
 
       
         <h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>This post contains some frequently used knowledge in Java.</p>
-<h1 id="Cheat-Sheet"><a href="#Cheat-Sheet" class="headerlink" title="Cheat Sheet"></a>Cheat Sheet</h1><h2 id="1-Comparator"><a href="#1-Comparator" class="headerlink" title="1. Comparator"></a>1. Comparator</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class NameSorter implements Comparator&lt;Employee&gt;</span><br><span class="line">&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Employee e1, Employee e2) &#123;</span><br><span class="line">        return e1.getName().compareToIgnoreCase( e2.getName() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Cheat-Sheet"><a href="#Cheat-Sheet" class="headerlink" title="Cheat Sheet"></a>Cheat Sheet</h1><h2 id="Comparator"><a href="#Comparator" class="headerlink" title="Comparator"></a>Comparator</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class NameSorter implements Comparator&lt;Employee&gt;</span><br><span class="line">&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Employee e1, Employee e2) &#123;</span><br><span class="line">        return e1.getName().compareToIgnoreCase( e2.getName() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The purpose of annotation @Override, referenced from Dave L.’s answer.<br><a href="https://stackoverflow.com/questions/94361/when-do-you-use-javas-override-annotation-and-why" target="_blank" rel="noopener">https://stackoverflow.com/questions/94361/when-do-you-use-javas-override-annotation-and-why</a> </p>
 <a id="more"></a>
 <p>Use it every time you override a method for two benefits. Do it so that you can take advantage of the compiler checking to make sure you actually are overriding a method when you think you are. This way, if you make a common mistake of misspelling a method name or not correctly matching the parameters, you will be warned that you method does not actually override as you think it does. Secondly, it makes your code easier to understand because it is more obvious when methods are overwritten.</p>
@@ -237,9 +237,10 @@
 Sorts the specified array of objects according to the order induced by the specified comparator.</code></p>
 <ul>
 <li>Example<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(p, (l1, l2) -&gt; l2[0] &#x3D;&#x3D; l1[0] ? l1[1] - l2[1] : l1[0] - l2[0]);</span><br></pre></td></tr></table></figure>
-<h2 id="2-Random"><a href="#2-Random" class="headerlink" title="2. Random"></a>2. Random</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Random rand &#x3D; new Random()</span><br><span class="line">targ &#x3D; rand.nextInt(N) &#x2F;&#x2F; generate a integer within [0, N)</span><br></pre></td></tr></table></figure></li>
-</ul>
 
+</li>
+</ul>
+<h2 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Random rand &#x3D; new Random()</span><br><span class="line">targ &#x3D; rand.nextInt(N) &#x2F;&#x2F; generate a integer within [0, N)</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -319,7 +320,7 @@ Sorts the specified array of objects according to the order induced by the speci
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cheat-Sheet"><span class="nav-number">2.</span> <span class="nav-text">Cheat Sheet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Comparator"><span class="nav-number">2.1.</span> <span class="nav-text">1. Comparator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Arrays-sort"><span class="nav-number">2.1.1.</span> <span class="nav-text">Arrays.sort()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Random"><span class="nav-number">2.2.</span> <span class="nav-text">2. Random</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cheat-Sheet"><span class="nav-number">2.</span> <span class="nav-text">Cheat Sheet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparator"><span class="nav-number">2.1.</span> <span class="nav-text">Comparator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Arrays-sort"><span class="nav-number">2.1.1.</span> <span class="nav-text">Arrays.sort()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random"><span class="nav-number">2.2.</span> <span class="nav-text">Random</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -333,16 +334,16 @@ Sorts the specified array of objects according to the order induced by the speci
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
