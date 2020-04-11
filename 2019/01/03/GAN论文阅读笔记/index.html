@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="cGan原文：《Conditional Generative Adversarial Nets》">
+  <meta name="description" content="cGan原文：《Conditional Generative Adversarial Nets》 原理Pytorch程序 遍历batch 1for i, (imgs, labels) in enumerate(dataloader)  网络结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GAN论文阅读笔记">
 <meta property="og:url" content="http://yoursite.com/2019/01/03/GAN%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Guanghao Chen HomePage">
-<meta property="og:description" content="cGan原文：《Conditional Generative Adversarial Nets》">
+<meta property="og:description" content="cGan原文：《Conditional Generative Adversarial Nets》 原理Pytorch程序 遍历batch 1for i, (imgs, labels) in enumerate(dataloader)  网络结构">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-01-04T00:03:16.000Z">
-<meta property="article:modified_time" content="2020-03-03T05:21:50.584Z">
+<meta property="article:modified_time" content="2020-04-11T00:15:08.362Z">
 <meta property="article:author" content="Guanghao(Steven) Chen">
 <meta property="article:tag" content="cGAN">
 <meta name="twitter:card" content="summary">
@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-02 21:21:50" itemprop="dateModified" datetime="2020-03-02T21:21:50-08:00">2020-03-02</time>
+                <time title="Modified: 2020-04-10 17:15:08" itemprop="dateModified" datetime="2020-04-10T17:15:08-07:00">2020-04-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,13 +229,12 @@
 
       
         <h1 id="cGan"><a href="#cGan" class="headerlink" title="cGan"></a>cGan</h1><p>原文：《Conditional Generative Adversarial Nets》</p>
-<a id="more"></a>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="Pytorch程序"><a href="#Pytorch程序" class="headerlink" title="Pytorch程序"></a>Pytorch程序</h2><ul>
 <li><p>遍历batch</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i, (imgs, labels) <span class="keyword">in</span> enumerate(dataloader)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>网络结构</p>
-</li>
+<a id="more"></a></li>
 <li><pre><code class="python"><span class="class"><span class="keyword">class</span> <span class="title">Generator</span><span class="params">(nn.Module)</span>:</span>
     <span class="comment"># initializers</span>
     <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>
@@ -378,16 +377,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
