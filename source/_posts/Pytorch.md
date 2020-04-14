@@ -1,11 +1,10 @@
 ---
-title: Pytorch
+title: Pytorch 用法
 date: 2019-02-25 16:30:46
 tags:
 ---
 
-## 保存模型
-<!--more-->
+# 保存模型
 ```python
 # 保存和加载整个模型
 torch.save(model_object, 'model.pkl')
@@ -17,7 +16,9 @@ model_object.load_state_dict(torch.load('params.pkl'))
 
 ```
 
-## 初始化
+<!--more-->
+
+# 初始化
 
 ```python
 print("1.使用另一个Conv层的权值")
@@ -33,7 +34,7 @@ w.weight=torch.nn.Parameter(ones) # 把Tensor的值作为权值赋值给Conv层�
 print(w.weight)
 ```
 
-## 自定义Dataloader
+# 自定义Dataloader
 
 dataloader.py
 
@@ -77,6 +78,21 @@ transform = transforms.Compose([
 
 	training_set = Dataset(partition['train'], agelabels, transform = transform)
 	training_loader = torch.utils.data.DataLoader(training_set, batch_size=batch_size, shuffle=False)
+```
+
+# 随机数
+
+## Numpy产生多维随机小数
+
+```python
+np.random.random((3,3))
+```
+
+## python产生一个随机数
+
+```python
+import random
+print(random.randint(0,9))
 ```
 
 

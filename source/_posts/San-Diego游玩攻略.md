@@ -8,7 +8,6 @@ tags: [Sea World, Midway]
 ---
 
 # Sea World at San Diego
-<!--more-->
 + 购票
   + [Sea World 购票链接](https://seaworld.com/san-diego/tickets/single-park-tickets/)
   + 计划买两个成人票
@@ -18,7 +17,7 @@ tags: [Sea World, Midway]
   + 公车去学校那站30路开始坐
 + 时间
   + 9am - 9pm
-
+<!--more-->
 # 中途岛航母（Midway Museum）
 
 不受天气限制

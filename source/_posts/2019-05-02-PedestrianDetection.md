@@ -1,17 +1,19 @@
 ---
-title: 'PedestrianDetection'
+title: 'Pedestrian Detection'
 date: 2019-05-02
 tags: [Deep Learning]
 ---
 
 这篇文章是完成CSE293课程作业的步骤，主要包含GCP服务器的配置，Faster RCNN的项目使用，CityPersons数据集的配置介绍，以防自己忘记。
 
-<!--more-->
+
 
 # GCP 搭建参考
 
 - [GCP配置参考1](https://github.com/sdrangan/introml/blob/master/GCP/terminal.md)
 - [GCP配置参考2](https://github.com/sdrangan/introml/blob/master/GCP/getting_started.md)
+
+<!--more-->
 
 # Faster RCNN Repo
 

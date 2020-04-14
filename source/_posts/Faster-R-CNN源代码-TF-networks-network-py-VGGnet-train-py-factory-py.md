@@ -2,7 +2,8 @@
 title: Faster R-CNN源代码(TF)--networks/network.py, VGGnet_train.py, factory.py
 date: 2018-08-11 22:05:40
 tags: Faster R-CNN
-categories: Computer Vision
+categories:
+- Computer Vision
 ---
 
 这篇文章是对Faster R-CNN源代码中的网络结构的、目标函数的定义部分的讲解。

@@ -11,7 +11,7 @@ categories: Deep Learning
 # cGan
 
 原文：《Conditional Generative Adversarial Nets》
-<!--more-->
+
 ## 原理
 
 ## Pytorch程序
@@ -23,7 +23,7 @@ categories: Deep Learning
   ```
 
 + 网络结构
-
+<!--more-->
 + ```python
   class Generator(nn.Module):
       # initializers
